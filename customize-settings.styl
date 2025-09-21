@@ -2,9 +2,9 @@
 @name           Customize Settings
 @description    自定义隐藏 QQNT 原生设置界面选项
 @preprocessor   stylus
-@version        0.2.0
+@version        0.2.1
 @homepageURL    https://github.com/PRO-2684/Transitio-user-css/#customize-more-menu
-@author         PRO-2684
+@author         PRO-2684, Sylphy
 @license     	gpl-3.0
 @var checkbox hideTuning "隐藏“通用”" 0
 @var checkbox hideRemind "隐藏“消息通知”" 0
@@ -12,6 +12,7 @@
 @var checkbox hideKeyboard "隐藏“快捷键”" 0
 @var checkbox hideAdministeringUser "隐藏“权限设置”" 0
 @var checkbox hideSetting "隐藏“登录设置”" 0
+@var checkbox hideLink "隐藏“账号绑定与授权”" 0
 @var checkbox hideNavSkinNormal "隐藏“超级调色盘”" 1
 ==/UserStyle== */
 @namespace xlink "http://www.w3.org/1999/xlink"; /* https://oreillymedia.github.io/Using_SVG/extras/ch03-namespaces.html */
@@ -44,6 +45,11 @@
     if (hideSetting) {
         &:has(use[xlink|href="/_upper_/resource/icons/setting_24.svg#setting_24"]) {
             display: none; /* 登录设置 */
+        }
+    }
+    if (hideLink) {
+        &:has(use[xlink|href="/_upper_/resource/icons/link_new_24.svg#link_new_24"]) {
+            display: none; /* 账号绑定与授权 */
         }
     }
     if (hideNavSkinNormal) {
